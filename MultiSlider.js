@@ -462,6 +462,7 @@ export default class MultiSlider extends React.Component {
 
     return this.optionsArray.map((number, index) => {
       var step = this.stepsAs[index];
+      const stepBeforePositionOne = stepLength * index < this.state.positionOne;
       return (
         <View
           key={number}
@@ -474,7 +475,10 @@ export default class MultiSlider extends React.Component {
           {this.props.showStepMarkers &&
             index !== 0 &&
             index !== this.optionsArray.length - 1 && (
-              <View style={markerStyles} />
+              <View style={[
+                markerStyles,
+                stepBeforePositionOne && this.props.selectedStepMarkerStyle
+              ]} />
             )}
           {this.props.showStepLabels && (
             <Text

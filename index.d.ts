@@ -75,6 +75,7 @@ export interface MultiSliderProps {
     stepStyle?: ViewStyle;
     stepLabelStyle?: ViewStyle;
     stepMarkerStyle?: ViewStyle;
+    selectedStepMarkerStyle?: ViewStyle;
     valuePrefix?: string;
     valueSuffix?: string;
     showSteps?: boolean;
