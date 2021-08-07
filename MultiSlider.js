@@ -472,9 +472,7 @@ export default class MultiSlider extends React.Component {
             { left: stepLength * index },
           ]}
         >
-          {this.props.showStepMarkers &&
-            index !== 0 &&
-            index !== this.optionsArray.length - 1 && (
+          {this.props.showStepMarkers && (
               <View style={[
                 markerStyles,
                 stepBeforePositionOne && this.props.selectedStepMarkerStyle
@@ -557,7 +555,7 @@ export default class MultiSlider extends React.Component {
               styles.track,
               this.props.trackStyle,
               trackOneStyle,
-              { width: trackOneLength },
+              { width: trackOneLength + 7},
             ]}
           />
           <View
@@ -749,7 +747,6 @@ const styles = StyleSheet.create({
   },
   step: {
     position: 'absolute',
-    marginLeft: -5,
   },
   stepMarker: {
     position: 'absolute',
