@@ -555,7 +555,7 @@ export default class MultiSlider extends React.Component {
               styles.track,
               this.props.trackStyle,
               trackOneStyle,
-              { width: trackOneLength + 7},
+              { width: trackOneLength + 3},
             ]}
           />
           <View
@@ -747,6 +747,7 @@ const styles = StyleSheet.create({
   },
   step: {
     position: 'absolute',
+    marginLeft: -4
   },
   stepMarker: {
     position: 'absolute',
