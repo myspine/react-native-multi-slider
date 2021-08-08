@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 import {
   StyleSheet,
@@ -550,14 +551,13 @@ export default class MultiSlider extends React.Component {
     const body = (
       <React.Fragment>
         <View style={[styles.fullTrack, { width: sliderLength }]}>
+          <LinearGradient colors={['#14D176', '#F3CA40', '#F4743B', '#FF4242']} useAngle={true} angle={90} locations={[0.05, 0.35, 0.7, 0.9]}>
           <View
             style={[
-              styles.track,
-              this.props.trackStyle,
-              trackOneStyle,
               { width: trackOneLength + 3},
             ]}
           />
+          </LinearGradient>
           <View
             style={[
               styles.track,
@@ -717,17 +717,7 @@ const styles = StyleSheet.create({
     }),
   },
   selectedTrack: {
-    ...Platform.select({
-      ios: {
-        backgroundColor: '#095FFF',
-      },
-      android: {
-        backgroundColor: '#0D8675',
-      },
-      web: {
-        backgroundColor: '#095FFF',
-      },
-    }),
+   
   },
   markerContainer: {
     position: 'absolute',
